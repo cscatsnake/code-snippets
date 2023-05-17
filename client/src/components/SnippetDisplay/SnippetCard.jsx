@@ -1,15 +1,8 @@
 import React, { useState } from 'react';
-// import Snippet from
-import { CopyToClipboard } from 'react-copy-to-clipboard';
-import CodeMirror from '@uiw/react-codemirror';
 import styles from './SnippetCard.module.scss';
-import { langs } from '@uiw/codemirror-extensions-langs';
-import TagInput from '../ui/TagInput/TagInput';
-import { Card, Button } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import DarkModeToggler from '../DarkModeToggler/DarkModeToggler';
 import FooterButtons from './FooterButtons';
-import CodeEditor from './CodeEditor';
-import SnippetInfo from './SnippetInfo';
 import Snippet from './Snippet';
 
 const SnippetCard = ({ selectedSnippet, getSnippet }) => {
@@ -89,7 +82,6 @@ const SnippetCard = ({ selectedSnippet, getSnippet }) => {
     <>
       <Card className={styles.card}>
         <DarkModeToggler />
-        {/* {checkEdit()} */}
         <Snippet
           editSnippet={editSnippet}
           setEditButtonState={setEditButtonState}

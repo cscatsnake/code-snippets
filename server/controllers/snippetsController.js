@@ -2,8 +2,11 @@ const User = require('../models/userModel.js');
 
 const snippetsController = {};
 
+// need to grab userId 
+
 snippetsController.getSnippets = (req, res, next) => {
-  const userId = '645fee9104d1f0acef95a002';
+  // this user should be pulled from created user
+  const userId = '6463e9cf6972b5c44ab69ff1';
 
   User.findOne({ _id: userId })
     .then((user) => {
@@ -19,8 +22,8 @@ snippetsController.getSnippets = (req, res, next) => {
 snippetsController.createSnippet = (req, res, next) => {
   const { title, comments, storedCode, tags, language } = req.body;
   const snippet = { title, comments, storedCode, tags, language };
-  const userId = '645fee9104d1f0acef95a002';
-
+  const userId = '6463e9cf6972b5c44ab69ff1';
+  
   User.findById(userId)
     .then((user) => {
       // Increment the lastId and assign it to the new snippet
@@ -55,7 +58,7 @@ snippetsController.createSnippet = (req, res, next) => {
 snippetsController.updateSnippet = (req, res, next) => {
   const { id, title, comments, storedCode, tags, language } = req.body;
   const updatedSnippet = { id, title, comments, storedCode, tags, language };
-  const userId = '645fee9104d1f0acef95a002';
+  const userId = '6463e9cf6972b5c44ab69ff1';
 
   User.findOneAndUpdate(
     { _id: userId, 'snippets.id': updatedSnippet.id },
@@ -82,7 +85,7 @@ snippetsController.updateSnippet = (req, res, next) => {
 
 snippetsController.deleteSnippet = (req, res, next) => {
   const { id } = req.query;
-  const userId = '645fee9104d1f0acef95a002';
+  const userId = '6463e9cf6972b5c44ab69ff1';
 
   User.findOne({ _id: userId })
     .then((user) => {
