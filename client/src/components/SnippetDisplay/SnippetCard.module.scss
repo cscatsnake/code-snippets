@@ -27,6 +27,8 @@
   padding: 15px;
   display: flex;
   flex-direction: column;
+  height: 75vh;
+  width: 60vw;
 }
 
 .buttonDiv {
@@ -39,20 +41,19 @@
   padding: 15px;
   margin: 50px;
   display: flex;
-  
 }
 
 .addButton {
   border: transparent;
-    height: 50px;
-    width: 270px;
-    // padding-left: 7px;
-    // padding-right: 7px;
-    border-radius: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    font-size: 1.5rem;
-    background-color: transparent;
-    color: white;
+  height: 50px;
+  width: 270px;
+  // padding-left: 7px;
+  // padding-right: 7px;
+  border-radius: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  background-color: transparent;
+  color: white;
 }

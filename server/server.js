@@ -12,12 +12,15 @@ const mongoURI =
 mongoose.connect(mongoURI);
 
 const snippetsRouter = require('./routes/snippets');
+const accessRouter = require('./routes/access');
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use('/snippets', snippetsRouter);
+app.post('/login', accessRouter);
+app.post('/signup', accessRouter);
 
 app.use((req, res) => res.status(404).send('Invalid endpoint'));
 
